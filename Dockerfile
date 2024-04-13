@@ -1,6 +1,6 @@
 FROM alpine:3.7
 
-LABEL maintainer="mattias.rundqvist@icloud.com"
+LABEL maintainer="spence4826@gmail.com"
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ COPY root /
 
 RUN apk add --update --no-cache openvpn tinyproxy \
 	&& mkdir config \
-	&& wget https://www.ipvanish.com/software/configs/configs.zip -P config/ \
+	&& wget https://configs.ipvanish.com/configs/configs.zip -P config/ \
 	&& unzip config/configs.zip -d config \
 	&& mv config/ca.ipvanish.com.crt . \
 	&& chmod 755 tls-verify.sh \
